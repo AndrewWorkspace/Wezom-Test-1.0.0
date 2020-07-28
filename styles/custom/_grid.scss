@@ -1,0 +1,42 @@
+/* Container and Row Settings */
+.container {
+	@include make-container();
+	@include make-container-max-widths();
+	& + & { margin-top: 30px; }
+}
+
+.row {
+	@include make-row();
+	@include make-grid-columns-custom(12);
+	
+	> * {
+		padding-right: ($grid-gutter-width / 2);
+		padding-left: ($grid-gutter-width / 2);
+	}
+}
+
+.row-no-gutter {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+/** Row spacing */
+.row-0 {
+	@include grid-offset(0px);
+}
+
+.row-15 {
+	@include grid-offset(15px);
+}
+
+.row-20 {
+	@include grid-offset(20px);
+}
+
+.row-30 {
+	@include grid-offset(30px);
+}
+
+.row-50 {
+	@include grid-offset(50px);
+}

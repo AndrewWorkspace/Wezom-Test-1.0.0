@@ -1,0 +1,125 @@
+.filter{
+	min-height: 30px;
+	padding: 0 12px;
+	border: 1px solid $primary;
+}
+
+.custom-radio:checked,
+.custom-radio:not(:checked) {
+	position: absolute;
+	display: none;
+}
+
+.custom-radio + label{
+	user-select: none;
+}
+
+.custom-radio:checked + label,
+.custom-radio:not(:checked) + label
+{
+	position: relative;
+	padding-left: 28px;
+	cursor: pointer;
+	line-height: 20px;
+	display: inline-block;
+	color: #666;
+}
+.custom-radio:checked + label:before,
+.custom-radio:not(:checked) + label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #ddd;
+	border-radius: 100%;
+	background: #fff;
+	transition: all 0.2s ease;
+}
+
+.custom-radio:checked + label:before,
+.custom-radio + label:hover:before {
+	border-color: $primary;
+	transition: all 0.2s ease;
+}
+.custom-radio:checked + label:after,
+.custom-radio:not(:checked) + label:after {
+	content: '';
+	width: 12px;
+	height: 12px;
+	background: $primary;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border-radius: 100%;
+	transition: all 0.2s ease;
+}
+.custom-radio:not(:checked) + label:after {
+	opacity: 0;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+.custom-radio:checked + label:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+//Custom Select
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: 0;
+	box-shadow: none;
+	border: 0;
+	background: $primary;
+	background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+	display: none;
+}
+/* Custom Select */
+.select {
+	position: relative;
+	display: flex;
+	width: 180px;
+	height: 30px;
+	line-height: 3;
+	background: #2c3e50;
+	overflow: hidden;
+}
+select {
+	flex: 1;
+	padding: 0 7px 0 12px;
+	color: #fff;
+	cursor: pointer;
+}
+/* Arrow */
+.select::after {
+	content: '\25BC';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 10px;
+	background: $primary;
+	cursor: pointer;
+	pointer-events: none;
+	-webkit-transition: .25s all ease;
+	-o-transition: .25s all ease;
+	transition: .25s all ease;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	border-left: 1px solid #fff;
+	&:hover{
+		&:after{
+			color: #fff;
+		}
+	}
+}
+

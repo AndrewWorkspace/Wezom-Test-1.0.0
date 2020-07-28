@@ -1,0 +1,29 @@
+.pagination{
+	justify-content: center;
+	margin-left: -5px;
+	display: none;
+	> * {
+		margin-left: 5px;
+	}
+	&.active{
+		display: inline-flex;
+	}
+}
+.pagination__item{
+	text-align: center;
+	font-weight: 700;
+	color: $white;
+	background-color: $primary;
+	padding: 10px;
+	user-select: none;
+	cursor: pointer;
+	transition: $transition-base;
+	border: none;
+	&:hover{
+		background: rgba($primary,.7);
+		transition: $transition-base;
+	}
+	&:disabled{
+		opacity: .4;
+	}
+}

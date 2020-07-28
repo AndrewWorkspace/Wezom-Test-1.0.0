@@ -1,0 +1,76 @@
+/** @section Buttons */
+
+// Button General Styles
+.button {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	font-family: $font-base;
+	font-weight: 400;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
+	cursor: pointer;
+	vertical-align: middle;
+	user-select: none;
+	transition: 250ms all ease-in-out;
+	min-height: 48px;
+	padding: 0 15px;
+	border: none;
+	
+	> * {
+		pointer-events: none;
+	}
+}
+
+.button-block {
+	display: block;
+	width: 100%;
+}
+
+
+// Bootstrap buttons
+.button-primary {
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	background-color: #ff8900;
+	color: $white;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 0;
+		bottom: 0;
+		background-image: linear-gradient(to right, #ff8500 0%, #ffae00 100%);
+		transition: linear .15s;
+		pointer-events: none;
+	}
+	
+	&:hover {
+		color: $white;
+		
+		&:before {
+			height: 100%;
+			transition: linear .15s;
+		}
+	}
+	
+	> * {
+		position: relative;
+		z-index: 2;
+	}
+}
+
+
+.button-sm {
+	font-size: 14px;
+	min-height: 30px;
+}
+
+.button-filter{
+  min-height: 30px;
+}

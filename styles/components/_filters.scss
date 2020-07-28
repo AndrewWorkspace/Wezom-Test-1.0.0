@@ -1,0 +1,30 @@
+
+.filters__wrap{
+	display: flex;
+	align-items: center;
+	.filter-item + .filter-item{
+		margin-left: 20px;
+	}
+}
+
+.filter-item{
+	display: flex;
+	&__group + &__group{
+		margin-left: 15px;
+	}
+}
+
+.js-filters-wrap{
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+
+
+.filters-reset{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 30px;
+}

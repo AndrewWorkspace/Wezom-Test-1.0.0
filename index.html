@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-touch-icon-114x114.png">
+	<link rel="stylesheet"
+	      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,700;1,900&amp;display=swap">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<section class="section-md bg-default">
+	<div class="container">
+		<div class="row ">
+			<div class="col-12 text-center">
+				<button class="button button-primary js-load-users">
+					<span>Download Users</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section section-md section-users bg-default">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 js-filters-wrap">
+				<div class="filters-reset">
+					<button type="button" class="pagination__item js-reset-filters">Reset Filters</button>
+				</div>
+				<div class="filters__wrap">
+					<div class="filter-item">
+						<input type="text" class="filter js-input-filter" placeholder="Search User">
+					</div>
+					<div class="filter-item">
+						<div class="filter-item__group">
+							<input type="radio" class="custom-radio js-radio-filter" id="show-all" data-gender="all" name="Gender filter" checked>
+							<label for="show-all"> All</label>
+						</div>
+						<div class="filter-item__group">
+							<input type="radio" class="custom-radio js-radio-filter" id="show-male" data-gender="male" name="Gender filter">
+							<label for="show-male">Male</label>
+						</div>
+						<div class="filter-item__group">
+							<input type="radio" class="custom-radio js-radio-filter" id="show-female" data-gender="female" name="Gender filter">
+							<label for="show-female">Female</label>
+						</div>
+					</div>
+					<div class="filter-item">
+						<button class="button button-primary button-sm js-name-sort" type="button">
+							<span>Alphabetical Sort</span>
+						</button>
+					</div>
+					<div class="filter-item select">
+						<select name="age-filter" class="js-age-filter">
+							<option selected data-age="any">Any Age</option>
+							<option data-age="under-35"> Under 35</option>
+							<option data-age="from-35-to-40"> 35 to 40 years old</option>
+							<option data-age="from-40-45">40 to 45 years old</option>
+							<option data-age="over-45"> Over 45</option>
+						</select>
+					</div>
+					<div class="filter-item select">
+						<select name="nationality-filter" class="js-nationality-filter">
+							<option selected>All Nationalities</option>
+						</select>
+					</div>
+					<div class="filter-item select">
+						<select name="cards-count" class="js-card-count">
+							<option data-count="5">5</option>
+							<option data-count="10">10</option>
+							<option data-count="20">20</option>
+							<option data-count="all">All</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row row-30 js-users-container"></div>
+		<div class="row">
+			<div class="col-12 text-center">
+					<div class="pagination js-pagination">
+						<button type="button" data-page="first" class="pagination__item">First</button>
+						<button type="button" data-page="previous" class="pagination__item"> < </button>
+						<button type="button" data-page="next" class="pagination__item"> > </button>
+						<button type="button" data-page="last" class="pagination__item">Last</button>
+					</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 js-statistic">
+			
+			</div>
+		</div>
+	</div>
+	<div class="preloader js-loader">
+		<div class="preloader-body">
+			<div class="cssload-container">
+				<div class="cssload-speeding-wheel"></div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
