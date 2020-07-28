@@ -25,6 +25,7 @@ export function pagination() {
 	}
 
 	$pagination.addEventListener('click', function (event) {
+		event.stopImmediatePropagation();
 		const target = event.target;
 		if (target !== undefined) {
 			users.forEach(user => user.display = false);

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	import('./components/filters/alphabetical-filter');
 	import('./components/filters/age-filter');
 	import('./components/filters/card-count-filter');
-	import('./components/pagination');
 	import('./components/filter-helpers');
+	import('./components/pagination');
 });
 
