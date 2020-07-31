@@ -13,8 +13,9 @@ export function pagination() {
 	let perPage = Number(cardCountVal);
 	const {users} = store;
 	const userLength = users.length;
+	let target
 	if (isNaN(perPage)) {
-		perPage = users.length;
+		perPage = userLength;
 	}
 
 	for (let i = 0; i < page + perPage; i++) {
@@ -25,12 +26,24 @@ export function pagination() {
 	}
 
 	$pagination.addEventListener('click', function (event) {
-		event.stopImmediatePropagation();
-		const target = event.target;
+		target = event.target;
 		if (target !== undefined) {
-			users.forEach(user => user.display = false);
-			page = getPageLength(target.dataset.page, userLength, page, perPage);
-
+			if (target.dataset.page === 'next') {
+				if (page + (perPage * 2) <= users.length) {
+					page = page + perPage;
+				} else {
+					page = users.length - perPage;
+				}
+			} else if (target.dataset.page === 'previous' && page !== 0) {
+				page = page - perPage
+			} else if (target.dataset.page === 'first') {
+				page = 0;
+			} else if (target.dataset.page === 'last') {
+				page = userLength - perPage;
+			}
+			users.forEach(user => {
+				user.display = false;
+			});
 			for (let i = page; i < page + perPage; i++) {
 				users[i].display = true;
 			}
@@ -40,20 +53,4 @@ export function pagination() {
 	$statisticWrapper.innerHTML = displayStatistic();
 }
 
-// Cards Per Page
-function getPageLength(dataPage, userLength, page, perPage) {
-	if (dataPage === 'next') {
-		if (page + (perPage * 2) <= userLength) {
-			page = page + perPage;
-		} else {
-			page = userLength - perPage;
-		}
-	} else if (dataPage === 'previous' && page !== 0) {
-		page = page - perPage
-	} else if (dataPage === 'first') {
-		page = 0;
-	} else if (dataPage === 'last') {
-		page = userLength - perPage;
-	}
-	return page;
-}
+
